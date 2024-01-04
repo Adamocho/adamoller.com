@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkpersonal_website=self.webpackChunkpersonal_website||[]).push([[691],{7200:function(e,l,t){t.r(l),t.d(l,{Head:function(){return a}});var n=t(7294);l.default=()=>n.createElement("main",null,n.createElement("h1",null,"Adam Oller"),n.createElement("p",null,"Hello there! This is my personal website!"));const a=()=>n.createElement("title",null,"olleradam.com")}}]);
+//# sourceMappingURL=component---src-pages-index-tsx-a0844134f1bc2f4f910b.js.map
