@@ -3,10 +3,7 @@ import type { HeadFC, PageProps } from "gatsby"
 import "../styles/index.css"
 
 const pageStyles = {
-  backgroundColor: "#211919",
-  color: "#f4ebeb",
   fontSize: "25px",
-  fontFamily: "Roboto, sans-serif, serif",
 }
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -20,4 +17,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>adamocho</title>
+export const Head: HeadFC = () => <title>Adam Oller - Programmer and a jack of all trades</title>

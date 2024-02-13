@@ -1,7 +1,69 @@
+:root {
+    --dark: #242424;
+    --white: #e8e8e8;
+    --accent: #f2ca8d;
+    --dominant: #165fa1;
+    --inbetween-sections: 10px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body {
-    background-color: #211919;
-    color: #f4ebeb;
-    font-size: 25px;
-    font-family: Roboto, sans-serif, serif;
+    background-color: var(--accent);
+    color: var(--white);
+    font-size: 50px;
+    font-family: Helvetica, 'Open Sans', sans-serif;
+}
+
+header {
+    height: 50px;
+    font-size: 35px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.about {
+    background-color: var(--dark);
+    width: calc(40% - var(--inbetween-sections));
+    padding-right: var(--inbetween-sections);
+}
+
+.about-name, .about-title {
+    font-family: 'Times New Roman', Times, serif;
     text-align: center;
+}
+
+.about-name {
+    font-size: 50%;
+}
+
+.about-title {
+    font-size: 25%;
+}
+
+.about-bio {
+    font-size: 40%;
+}
+
+main {
+    background-color: var(--dominant);
+    width: auto;
+}
+
+.ornament, .signature, .main-heading {
+    color: var(--accent);
+}
+
+.main-heading {
+    font-size: 64px;
+}
+
+.signature {
+    font-family: 'Brush Script MT', cursive;
+}
+
+.dark-variant {
+    color: var(--dark);
 }
