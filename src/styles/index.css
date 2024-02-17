@@ -56,32 +56,48 @@ footer {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background-color: var(--white);
+    background-color: var(--grey);
     box-shadow: black -10px 10px 15px;
     margin-inline: auto;
 }
 
-.about-name, .about-title {
-    font-family: 'Times New Roman', Times, serif;
+.about-names {
+    display: flex;
+    height: 100px;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-block: 25px 50px;
 }
 
 .about-name {
-    font-size: 50px;
+    display: block;
+    font-size: 90px;
+    color: var(--accent);
+    line-height: 50%;
 }
 
 .about-separator {
     width: 200px;
     height: 2px;
-    background-color: var(--accent);
+    background-color: black;
+    opacity: 40%;
     margin-inline: auto;
 }
 
 .about-title {
-    font-size: 15px;
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 50%;
+    color: var(--grey);
+    opacity: 80%;
 }
 
 .about-bio {
-    font-size: 25px;
+    display: inline-block;
+    font-size: 20px;
+    max-width: 80%;
 }
 
 .content {
@@ -92,17 +108,13 @@ footer {
     padding-top: 100px;
 }
 
-.ornament, .signature, .main-heading {
-    color: var(--accent);
-}
-
 .main-heading {
+    color: var(--accent);
     font-size: 64px;
 }
 
 .signature {
     font-family: 'Sacramento', cursive;
-    font-size: 40px;
 }
 
 .dark-variant {
