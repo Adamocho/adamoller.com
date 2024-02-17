@@ -9,8 +9,7 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        "icon": "src/images/icon.png"
-        // make your own SVG icon 512x512px 
+        "icon": "src/images/icon.svg"
       }
     },
     {
