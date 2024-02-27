@@ -1,5 +1,6 @@
 :root {
     --dark: #242424;
+    --dark-with-opacity: #24242499;
     --white: #e8e8e8;
     --grey: #cecece;
     --accent: #f2ca8d;
@@ -16,39 +17,66 @@ body {
     background-color: var(--dominant);
     color: var(--white);
     font-family: Helvetica, 'Open Sans', sans-serif;
+    overflow-x: hidden;
 }
 
-header {
-    position: absolute;
-    display: flex;
+nav {
+    position: sticky;
     top: 0;
-    background-color: var(--dark);
-    opacity: 60%;
-    height: 20px;
-    width: 100%;
+    overflow: visible;
+    width: 100vw; 
+    height: 0;
+    font-family: 'Times New Roman', Times, serif; 
     font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
+    z-index: 1;
+}
+
+nav .items {
+    display: flex;
+    justify-content: space-evenly;
+    height: max-content;
+    background-color: var(--dark-with-opacity);
+    color: var(--accent);
+}
+
+.items * {
+    text-align: center;
+    width: clamp(350px, 150px, 33%);
+    padding: auto;
+    user-select: none;
+    cursor: pointer;
+    transition: color 2.5s, background-color 400ms;
+    transition-timing-function: ease-out;
+}
+
+.items > :hover {
+    color: var(--dark);
+    background-color: var(--white);
 }
 
 footer {
     clear: both;
-    text-align: center;
-    background-color: var(--dominant);
+    width: 100%;
+    position: relative;
+    background-color: var(--dark);
     color: var(--accent);
-    border-top: 1px solid var(--dark);
+    z-index: 2;
+    padding-left: 50px;
 }
 
 .about {
     display: block;
     float: left;
+    position: sticky;
     background-color: var(--dark);
     width: calc(40vw - var(--inbetween-sections));
     border-right: var(--inbetween-sections) solid var(--accent);
     top: 0;
     left: 0;
-    height: clamp(500px, 100vh, 100vh);
-    padding-top: 200px;
+    min-height: 100vh;
+    height: fit-content;
     text-align: center;
+    z-index: 0;
 }
 
 .about img {
@@ -59,21 +87,22 @@ footer {
     background-color: var(--grey);
     box-shadow: black -10px 10px 15px;
     margin-inline: auto;
+    margin-top: 100px;
 }
 
 .about-names {
     display: flex;
     height: 100px;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-block: 25px 50px;
 }
 
 .about-name {
     display: block;
-    font-size: 90px;
+    font-size: 65px;
     color: var(--accent);
-    line-height: 50%;
+    line-height: 60%;
 }
 
 .about-separator {
@@ -82,6 +111,7 @@ footer {
     background-color: black;
     opacity: 40%;
     margin-inline: auto;
+    margin-block: 10px;
 }
 
 .about-title {
@@ -89,21 +119,24 @@ footer {
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
     font-weight: 400;
-    line-height: 50%;
+    line-height: 100%;
     color: var(--grey);
     opacity: 80%;
+    margin-bottom: 20px;
 }
 
 .about-bio {
     display: inline-block;
-    font-size: 20px;
-    max-width: 80%;
+    font-size: clamp(22px, 1.5vw, 30px);
+    max-width: 90%;
+    padding-bottom: 50px;
 }
 
 .content {
     display: block;
     float: left;
-    width: 30%;
+    width: 60vw;
+    margin-inline: auto;
     background-color: var(--dominant);
     padding-top: 100px;
 }
@@ -137,4 +170,34 @@ footer {
 .not-found p {
     font-size: clamp(20px, 5vw, 40px);
     max-width: 800px;
+}
+
+@media only screen and (max-width: 800px) {
+    .about {
+        position: static;
+        height: fit-content;
+        min-height: 60%;
+        width: 100%;
+        border-right: 0;
+        border-bottom: var(--inbetween-sections) solid var(--accent);
+        padding-bottom: 50px;
+    }
+
+    .about-names {
+        height: fit-content;
+    }
+
+    .about-name {
+        font-size: 90px;
+        line-height: 90%;
+    }
+
+    .about-bio {
+        font-size: 20px;
+        max-width: 90%;
+    }
+
+    .content {
+        width: 100%;
+    }
 }
