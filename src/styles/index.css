@@ -1,6 +1,6 @@
 :root {
     --dark: #242424;
-    --dark-with-opacity: #24242499;
+    --dark-with-opacity: #242424aa;
     --white: #e8e8e8;
     --grey: #cecece;
     --accent: #f2ca8d;
@@ -136,14 +136,24 @@ footer {
     display: block;
     float: left;
     width: 60vw;
-    margin-inline: auto;
     background-color: var(--dominant);
-    padding-top: 100px;
+    padding-top: 50px;
+}
+
+.content * {
+    width: fit-content;
+}
+
+.hobbys, .portfolio, .contact {
+    animation-name: appearing;
+    animation-duration: 1s;
+    animation-timing-function: linear;
 }
 
 .main-heading {
     color: var(--accent);
     font-size: 64px;
+    text-align: center;
 }
 
 .signature {
@@ -170,6 +180,12 @@ footer {
 .not-found p {
     font-size: clamp(20px, 5vw, 40px);
     max-width: 800px;
+}
+
+@keyframes appearing {
+    0% { opacity: 0; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 @media only screen and (max-width: 800px) {
@@ -199,5 +215,6 @@ footer {
 
     .content {
         width: 100%;
+        min-height: 40vh;
     }
 }
