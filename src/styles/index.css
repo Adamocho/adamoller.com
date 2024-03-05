@@ -27,14 +27,14 @@ nav {
     width: 100vw; 
     height: 0;
     font-family: 'Times New Roman', Times, serif; 
-    font-size: 20px;
+    font-size: 25px;
     z-index: 1;
 }
 
 nav .items {
     display: flex;
     justify-content: space-evenly;
-    height: max-content;
+    height: 40px;
     background-color: var(--dark-with-opacity);
     color: var(--accent);
 }
@@ -47,6 +47,17 @@ nav .items {
     cursor: pointer;
     transition: color 2.5s, background-color 400ms;
     transition-timing-function: ease-out;
+}
+
+.items img {
+    display: block;
+    padding-block: 5px;
+    width: 80px;
+}
+
+.items img:hover {
+    background-color: inherit;
+    color: inherit;
 }
 
 .items > :hover {
@@ -70,7 +81,6 @@ footer {
     position: sticky;
     background-color: var(--dark);
     width: calc(40vw - var(--inbetween-sections));
-    border-right: var(--inbetween-sections) solid var(--accent);
     top: 0;
     left: 0;
     min-height: 100vh;
@@ -132,6 +142,14 @@ footer {
     padding-bottom: 50px;
 }
 
+.separator {
+    display: flex;
+    float: left;
+    height: 100vh;
+    width: var(--inbetween-sections);
+    background-color: var(--accent);
+}
+
 .content {
     display: block;
     float: left;
@@ -148,6 +166,45 @@ footer {
     animation-name: appearing;
     animation-duration: 1s;
     animation-timing-function: linear;
+    padding-inline: 5%;
+}
+
+.github-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    background-color: var(--dark);
+    border: 1px solid var(--grey);
+}
+
+.github-card * {
+    width: 100%;
+}
+
+.github-link {
+    text-decoration: none;
+    color: var(--accent);
+    text-align: center;
+    font-size: 2em;
+}
+
+.github-link:hover {
+    text-decoration: underline;
+}
+
+.github-desc {
+    font-size: 0.75em;
+    opacity: 0.75;
+}
+
+.github-img {
+    aspect-ratio: 16 / 9;
 }
 
 .main-heading {
@@ -194,8 +251,6 @@ footer {
         height: fit-content;
         min-height: 60%;
         width: 100%;
-        border-right: 0;
-        border-bottom: var(--inbetween-sections) solid var(--accent);
         padding-bottom: 50px;
     }
 
@@ -216,5 +271,11 @@ footer {
     .content {
         width: 100%;
         min-height: 40vh;
+    }
+
+    .separator {
+        position: static;
+        width: 100%;
+        height: var(--inbetween-sections);
     }
 }
