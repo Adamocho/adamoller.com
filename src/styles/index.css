@@ -80,7 +80,7 @@ footer {
     float: left;
     position: sticky;
     background-color: var(--dark);
-    width: calc(40vw - var(--inbetween-sections));
+    width: calc(38vw - var(--inbetween-sections));
     top: 0;
     left: 0;
     min-height: 100vh;
@@ -143,17 +143,21 @@ footer {
 }
 
 .separator {
-    display: flex;
+    display: block;
     float: left;
+    position: sticky;
     height: 100vh;
     width: var(--inbetween-sections);
     background-color: var(--accent);
+    z-index: 0;
+    top: 0;
+    left: var(--inbetween-sections);
 }
 
 .content {
     display: block;
     float: left;
-    width: 60vw;
+    width: 58vw;
     background-color: var(--dominant);
     padding-top: 50px;
 }
