@@ -25,6 +25,10 @@ const config: GatsbyConfig = {
           {
             name: 'Sacramento',
             file: 'https://fonts.googleapis.com/css2?family=Sacramento&display=swap'
+          },
+          {
+            name: 'Fira Code',
+            file: 'https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap'
           }
       ]}
     }
