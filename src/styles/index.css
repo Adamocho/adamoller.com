@@ -292,3 +292,13 @@ footer {
     color: var(--accent);
 }
 
+@media only screen and (max-width: 600px) {
+    .home-info {
+        width: auto;
+        padding-block: 10px;
+    }
+
+    .home-info p {
+        font-size: 16px;
+    }
+}
