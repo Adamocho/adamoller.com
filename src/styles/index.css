@@ -4,24 +4,25 @@
     --white: #e8e8e8;
     --grey: #cecece;
     --accent: #f2ca8d;
-    --dominant: #165fa1;
+    --dominant: #0189ff;
     --inbetween-sections: 10px;
 }
 
-* {
-    padding: 0;
-    margin: 0;
-}
-
 body {
+    margin: 0;
     background-color: var(--dominant);
     color: var(--white);
     font-family: Helvetica, 'Open Sans', sans-serif;
     overflow-x: hidden;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+}
+
 nav {
-    position: sticky;
+    position: absolute;
     top: 0;
     overflow: visible;
     width: 100vw; 
@@ -35,7 +36,6 @@ nav .items {
     display: flex;
     justify-content: space-evenly;
     height: 40px;
-    background-color: var(--dark-with-opacity);
     color: var(--accent);
 }
 
@@ -55,76 +55,57 @@ nav .items {
     width: 80px;
 }
 
-.items img:hover {
-    background-color: inherit;
-    color: inherit;
-}
-
-.items > :hover {
+/* Leave the logo unanimated */
+.items > :hover:not(:first-child) {
     color: var(--dark);
     background-color: var(--white);
 }
 
 footer {
-    clear: both;
-    width: 100%;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     background-color: var(--dark);
-    color: var(--accent);
-    z-index: 2;
-    padding-left: 50px;
+    width: 100%;
+    height: 100px;
+    color: var(--white);
+    font-size: 18px;
 }
 
 .about {
-    display: block;
-    float: left;
-    position: sticky;
-    background-color: var(--dark);
-    width: calc(38vw - var(--inbetween-sections));
-    top: 0;
-    left: 0;
-    min-height: 100vh;
-    height: fit-content;
+    background-color: var(--dominant);
+    width: 100%;
+    min-height: fit-content;
     text-align: center;
-    z-index: 0;
+    padding-top: 150px;
 }
 
-.about img {
-    display: block;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background-color: var(--grey);
-    box-shadow: black -10px 10px 15px;
-    margin-inline: auto;
-    margin-top: 100px;
-}
-
-.about-names {
+.about-desc {
     display: flex;
-    height: 100px;
     flex-direction: column;
-    justify-content: space-between;
     margin-block: 25px 50px;
 }
 
-.about-name {
-    display: block;
-    font-size: 65px;
+.about-desc-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 80px;
+    font-weight: 700;
     color: var(--accent);
-    line-height: 60%;
 }
 
-.about-separator {
-    width: 200px;
-    height: 2px;
-    background-color: black;
-    opacity: 40%;
-    margin-inline: auto;
-    margin-block: 10px;
+.about-desc-name::after {
+    content: "";
+    width: 40px;
+    height: 75px;
+    background-color: var(--white);
+    animation: blinking 1.5s infinite;
 }
 
-.about-title {
+.about-desc-title {
     font-size: 17px;
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
@@ -143,27 +124,37 @@ footer {
 }
 
 .separator {
-    display: block;
-    float: left;
-    position: sticky;
-    height: 100vh;
-    width: var(--inbetween-sections);
-    background-color: var(--accent);
-    z-index: 0;
-    top: 0;
-    left: var(--inbetween-sections);
+    aspect-ratio: 900 / 450;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.wave1 {
+    background-image: url('../images/waves-blue-to-white.svg');
+}
+
+.wave2 {
+    background-image: url('../images/waves-blue-to-black.svg');
+}
+
+.flip {
+    transform: rotate(180deg);
+}
+
+.fira-code {
+    font-family: "Fira Code", monospace;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
 }
 
 .content {
-    display: block;
-    float: left;
-    width: 58vw;
-    background-color: var(--dominant);
+    width: 100%;
+    background-color: var(--white);
     padding-top: 50px;
-}
-
-.content * {
-    width: fit-content;
+    color: var(--dark);
 }
 
 .hobbys, .portfolio, .contact {
@@ -217,10 +208,6 @@ footer {
     text-align: center;
 }
 
-.signature {
-    font-family: 'Sacramento', cursive;
-}
-
 .dark-variant {
     color: var(--dark);
 }
@@ -234,8 +221,20 @@ footer {
 }
 
 .not-found h1 {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
     font-size: clamp(70px, 10vw, 100px);
     color: var(--accent);
+}
+
+.not-found h1::after {
+    content: "404";
+    font-size: clamp(70px, 10vw, 100px);
+    color: var(--accent);
+    /* Animate the 404 error */
+    animation: blinking 1.5s infinite;
 }
 
 .not-found p {
@@ -243,43 +242,53 @@ footer {
     max-width: 800px;
 }
 
-@keyframes appearing {
+.not-found a {
+    text-decoration: none;
+    color: inherit;
+    font-size: clamp(20px, 5vw, 40px);
+    color: var(--accent);
+}
+
+@keyframes blinking {
     0% { opacity: 0; }
     50% { opacity: 0; }
+    51% { opacity: 1; }
     100% { opacity: 1; }
 }
 
-@media only screen and (max-width: 800px) {
-    .about {
-        position: static;
-        height: fit-content;
-        min-height: 60%;
-        width: 100%;
-        padding-bottom: 50px;
-    }
-
-    .about-names {
-        height: fit-content;
-    }
-
-    .about-name {
-        font-size: 90px;
-        line-height: 90%;
-    }
-
-    .about-bio {
-        font-size: 20px;
-        max-width: 90%;
-    }
-
-    .content {
-        width: 100%;
-        min-height: 40vh;
-    }
-
-    .separator {
-        position: static;
-        width: 100%;
-        height: var(--inbetween-sections);
-    }
+.home-info {
+    width: clamp(400px, 80vw, 1200px);
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding:50px;
+    margin-inline: auto;
+    margin-bottom: 50px;
+    background-color: var(--dark);
+    border-radius: 15px;
+    font-family: 'Fira Code', monospace;
+    color: var(--white);
 }
+
+.home-info h1 {
+    color: var(--accent);
+    margin-inline: auto;
+    font-family: 'Helvetica', serif;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.home-info p {
+    font-size: 22px;
+}
+
+.home-info-cups ul {
+    font-size: 18px;
+    list-style-type: disclosure-closed;
+}
+
+.home-info-cups li {
+    color: var(--accent);
+}
+

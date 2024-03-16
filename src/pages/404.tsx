@@ -1,12 +1,13 @@
 import * as React from "react"
-import { HeadFC, PageProps } from "gatsby"
+import { HeadFC, PageProps, Link } from "gatsby"
 import "../styles/index.css"
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
     <main className="not-found">
-      <h1>Error 404</h1>
+      <h1 className="fira-code">Error </h1>
       <p>Sorry, not found. This page probably exists in another universe though :P</p>
+      <Link to="/">Goto: Home</Link>
     </main>
   )
 }
