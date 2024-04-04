@@ -4,10 +4,7 @@ import "../styles/index.css"
 import Home from "../components/home"
 import Portfolio from "../components/portfolio"
 import Contact from "../components/contact"
-import Hobbys from "../components/hobbys"
-import portrait from "../images/me-2.jpg"
 import logo from "../images/icon.svg"
-import waves_blue_black from "../images/waves-blue-to-black.svg"
 
 const IndexPage: React.FC<PageProps> = () => {
 
@@ -23,28 +20,32 @@ const IndexPage: React.FC<PageProps> = () => {
         <div className="items">
           <img src={logo} onClick={() => setPage("")}></img>
           <div onClick={() => setPage("portfolio")}>Portfolio</div>
-          <div onClick={() => setPage("hobbys")}>Hobbys</div>
           <div onClick={() => setPage("contact")}>Contact</div>
         </div>
       </nav>
 
       <div className="about">
           <div className="about-desc">
-              <span className="about-desc-name fira-code">Adam Oller</span>
+              <span className="about-desc-name fira-code">Adam Oller
+                { page === "portfolio" && "'s works" }
+                { page === "contact" && "'s contact page"  }
+                { page === "" && "" }
+              </span>
               <p className="about-desc-title">Programmer and a jack of all trades</p>
           </div>
 
-          <span className="about-bio">
-            Hey there! I'm Adam - Rust programmer, Linux enthusiast, graphics designer, adventurer. Books suck me in for hours.
-
+          <span className="about-bio"> Hey there!
+                { page === "portfolio" && " This is my personal portfolio. These are just a few examples of what I'm capable of. Please enjoy!" }
+                { page === "contact" && " My contact page is waiting for you. Got any questions - let's talk. I'm open and always happy to aid anyone in need."  }
+                { page === "" && " I'm Adam - Rust programmer, Linux enthusiast, graphics designer, adventurer, books suck me in for hours. I'm always open to new challenges." }
           </span>
       </div>
-
-      <div className="separator wave1"></div>
+        { page === "portfolio" && <div className="separator wave3"></div>  }
+        { page === "contact" && <div className="separator wave2"></div>  }
+        { page === "" && <div className="separator wave1"></div> }
 
       <div className="content">
         { page === "portfolio" && <Portfolio/> }
-        { page === "hobbys" && <Hobbys/> }
         { page === "contact" && <Contact/>  }
         { page === "" && <Home/> }
       </div>
