@@ -380,7 +380,6 @@ footer {
     .about-desc-name {
         font-size: clamp(2.813rem, 2.375rem + 7vw, 5rem);
         letter-spacing: -3px;
-        line-break: anywhere;
     }
 
     .about-desc-name::after {
