@@ -359,7 +359,13 @@ footer {
 
 .contact-link {
     color: var(--dominant);
+    text-decoration: none;
 }
+
+.contact-link:visited {
+    color: var(--white);
+}
+
 
 @media only screen and (max-width: 600px) {
     .home-info {
