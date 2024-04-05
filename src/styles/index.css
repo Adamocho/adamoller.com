@@ -89,7 +89,7 @@ footer {
     display: inline-block;
     font-size: clamp(4.688rem, 3.906rem + 2.083vw, 5.313rem);
     color: var(--accent);
-    max-width: 650px;
+    max-width: 750px;
     margin-inline: auto;
 }
 
