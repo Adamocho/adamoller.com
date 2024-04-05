@@ -40,25 +40,23 @@ nav .items {
 }
 
 .items * {
-    text-align: center;
-    width: clamp(350px, 150px, 33%);
-    padding: auto;
     user-select: none;
     cursor: pointer;
+    width: auto;
     transition: color 2.5s, background-color 400ms;
     transition-timing-function: ease-out;
+    border-bottom: 1px solid var(--dark-with-opacity);
+    padding-inline: clamp(5px, -2.38rem + 16.026vw, 10vw);
 }
 
 .items img {
-    display: block;
     padding-block: 5px;
-    width: 80px;
 }
 
-/* Leave the logo unanimated */
-.items > :hover:not(:first-child) {
+.items > :hover {
     color: var(--dark);
     background-color: var(--white);
+    border-color: var(--white);
 }
 
 footer {
@@ -89,7 +87,7 @@ footer {
 
 .about-desc-name {
     display: inline-block;
-    font-size: 80px;
+    font-size: clamp(4.688rem, 3.906rem + 2.083vw, 5.313rem);
     color: var(--accent);
     max-width: 650px;
     margin-inline: auto;
@@ -210,9 +208,6 @@ footer {
 
 .content {
     width: 100%;
-    /* background-color: var(--white); */
-    /* padding-top: 50px; */
-    /* color: var(--dark); */
 }
 
 .portfolio, .contact, .home {
@@ -294,7 +289,8 @@ footer {
 }
 
 .home-info {
-    width: clamp(400px, 80vw, 1200px);
+    max-width: 1200px;
+    width: auto;
     height: auto;
     display: flex;
     flex-direction: row;
@@ -331,6 +327,7 @@ footer {
 
 .home-info-cups li {
     color: var(--accent);
+    padding-block: 10px;
 }
 
 .contact {
@@ -352,9 +349,16 @@ footer {
     margin-inline: auto;
 }
 
+.links {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
 .contact p {
     color: var(--accent);
     font-size: clamp(1.25rem, 1rem + 1vw, 1.875rem);
+    display: inline-block;
 }
 
 .contact-link {
@@ -378,8 +382,9 @@ footer {
     }
 
     .about-desc-name {
-        font-size: clamp(2.813rem, 2.375rem + 7vw, 5rem);
+        font-size: clamp(2.5rem, 2.575rem + 7vw, 4.5rem);
         letter-spacing: -3px;
+        max-width: 350px;
     }
 
     .about-desc-name::after {
@@ -396,5 +401,11 @@ footer {
     .project {
         width: 100%;
         margin-inline: 0;
+    }
+
+    .contact p {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
     }
 }

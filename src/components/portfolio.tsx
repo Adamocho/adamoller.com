@@ -9,8 +9,9 @@ const Portfolio: React.FC<PageProps> = () => {
 
             <div className="project">
                 <div className="github-card">
-                    <a className="project-title" href="https://github.com/Adamocho/chip8-rust" target="_blank">Chip-8 Rust</a>
-                    <img className="github-img" src="https://github.com/Adamocho/chip8-rust/raw/master/logo.svg"/>
+                    <a className="project-title" href="https://github.com/Adamocho/chip8-rust" target="_blank">Chip-8 Rust
+                        <img className="github-img" src="https://github.com/Adamocho/chip8-rust/raw/master/logo.svg"/>
+                    </a>
                 </div>
                 <p className="project-description">
                     Chip8 emulator (interpreter) in Rust. It was quite an interesting journey and I got much from it.
@@ -20,8 +21,9 @@ const Portfolio: React.FC<PageProps> = () => {
 
             <div className="project">
                 <div className="github-card">
-                    <a className="project-title" href="https://github.com/Adamocho/dotfiles" target="_blank">Dotfiles</a>
-                    <img className="github-img" src="https://github.com/Adamocho/dotfiles/raw/main/logo.svg"/>
+                    <a className="project-title" href="https://github.com/Adamocho/dotfiles" target="_blank">Dotfiles
+                        <img className="github-img" src="https://github.com/Adamocho/dotfiles/raw/main/logo.svg"/>
+                    </a>
                 </div>
                 <p className="project-description">
                     My dotfiles for Linux. It includes bootstrapping tools, self-written 
@@ -32,8 +34,9 @@ const Portfolio: React.FC<PageProps> = () => {
 
             <div className="project">
                 <div className="github-card">
-                    <a className="project-title" href="https://github.com/Adamocho/codevm" target="_blank">CodeVM</a>
-                    <img className="github-img" src="https://github.com/Adamocho/codevm/raw/master/logo.svg"/>
+                    <a className="project-title" href="https://github.com/Adamocho/codevm" target="_blank">CodeVM
+                        <img className="github-img" src="https://github.com/Adamocho/codevm/raw/master/logo.svg"/>
+                    </a>
                 </div>
                 <p className="project-description">
                     I've had enough of one Linux distro without vscode, so I made a version controller instead.
@@ -43,8 +46,9 @@ const Portfolio: React.FC<PageProps> = () => {
 
             <div className="project">
                 <div className="github-card">
-                    <a className="project-title" href="https://github.com/Adamocho/doomer" target="_blank">Doomer</a>
-                    <img className="github-img" src="https://github.com/Adamocho/doomer/raw/master/img/Logo3.svg"/>
+                    <a className="project-title" href="https://github.com/Adamocho/doomer" target="_blank">Doomer
+                        <img className="github-img" src="https://github.com/Adamocho/doomer/raw/master/img/Logo3.svg"/>
+                    </a>
                 </div>
                 <p className="project-description">
                     I always liked the old Doom games after my father. I wanted to create my own launcher for the game to suit my needs and voilà.
