@@ -25,7 +25,7 @@ const Summary: React.FC<PageProps> = () => {
                     <ul>
                         <li>Became an official programmer (with a diploma and title) in 2023</li>
                         <li>Advanced Linux user with a ton of experience paired with a gigantic knowledge about the system, commands, shell and more</li>
-                        <li>52 books read in 2024</li>
+                        <li>52 books read in 2023 and 36 the year before</li>
                         <li>Speaks fluently in Polish, English, German and a glimpse of Ukrainian/Russian</li>
                     </ul>
                 </div>
