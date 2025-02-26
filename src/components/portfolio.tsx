@@ -9,6 +9,17 @@ const Portfolio: React.FC<PageProps> = () => {
 
             <div className="project">
                 <div className="github-card">
+                    <a className="project-title" href="https://github.com/Adamocho/primal" target="_blank">Primal
+                        <img className="github-img" src="https://github.com/Adamocho/primal/raw/master/img/logo.svg"/>
+                    </a>
+                </div>
+                <p className="project-description">
+                    Hey, you know BASIC, right? It's his ancestor, as I like to think of it, PRIMAL, more primitive, but it works.
+                </p>
+            </div>
+
+            <div className="project">
+                <div className="github-card">
                     <a className="project-title" href="https://github.com/Adamocho/chip8-rust" target="_blank">Chip-8 Rust
                         <img className="github-img" src="https://github.com/Adamocho/chip8-rust/raw/master/logo.svg"/>
                     </a>
@@ -21,14 +32,23 @@ const Portfolio: React.FC<PageProps> = () => {
 
             <div className="project">
                 <div className="github-card">
-                    <a className="project-title" href="https://github.com/Adamocho/dotfiles" target="_blank">Dotfiles
-                        <img className="github-img" src="https://github.com/Adamocho/dotfiles/raw/main/logo.svg"/>
+                    <a className="project-title" href="https://github.com/Adamocho/nixconfig" target="_blank">Nixconfig
+                        <img className="github-img" src="https://github.com/Adamocho/nixconfig/raw/main/logo.svg"/>
                     </a>
                 </div>
                 <p className="project-description">
-                    My dotfiles for Linux. It includes bootstrapping tools, self-written 
-                    shell-scripts for DMENU and general purpose, many configuration files 
-                    for git, shell, tmux and much much more.
+                    My machines. My hardware. My systems. In code, though I also have another project for dotfiles.
+                </p>
+            </div>
+
+            <div className="project">
+                <div className="github-card">
+                    <a className="project-title" href="https://github.com/Adamocho/bookshelf" target="_blank">Bookshelf
+                        <img className="github-img" src="https://github.com/Adamocho/bookshelf/raw/master/img/logo.svg"/>
+                    </a>
+                </div>
+                <p className="project-description">
+                    An online bookshelf with some analysis tools added on top. If you prefer Goodreads, I can totally relate, but this one's mine, OK!?
                 </p>
             </div>
 
@@ -59,7 +79,7 @@ const Portfolio: React.FC<PageProps> = () => {
             <div className="project">
                 <p className="project-title">Inspector</p>
                 <p className="project-description">
-                    Water and electricity consumption monitoring software build in C# .NET Core. Created during an aprenticeship in EIB SA. (www.eib.com.pl) in Poland.
+                    Water and electricity consumption monitoring software build in C# .NET Core. Created during an aprenticeship.
                     It was afterwards further developed and, for example, the company's guardian makes use of it, as it shows whether all lights are off on a specified floor.
                     Also (monthly/weekly/daily) water and/or electricy usage spreadsheets are available, rendering costs tracking trivial.
                 </p>

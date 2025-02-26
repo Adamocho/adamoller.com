@@ -69,6 +69,7 @@ footer {
     height: 100px;
     color: var(--white);
     font-size: 18px;
+    border-bottom: 100px solid linear-gradient(var(--white), var(--dark));
 }
 
 .about {
