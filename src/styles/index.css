@@ -67,7 +67,8 @@ footer {
     width: 100%;
     min-height: fit-content;
     text-align: center;
-    padding-top: 150px;
+    padding-top: 175px;
+    padding-bottom: 400px;
 }
 
 .about-desc {
@@ -273,13 +274,12 @@ footer {
 
 
 .home-info {
-    max-width: 1200px;
     width: auto;
     height: auto;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding:50px;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
     margin-inline: auto;
     margin-bottom: 50px;
     border-radius: 15px;
@@ -293,18 +293,29 @@ footer {
     font-family: 'Helvetica', serif;
     font-size: 40px;
     font-weight: 300;
+    padding-bottom: 50px;
 }
 
-.home-info p {
+.myself {
+    width: 100%;
+    max-width: 600px;
+    min-width: 300px;
+    aspect-ratio: 0.82 / 1;
+    border-radius: 1rem;
+    background-color: var(--dark);
+}
+
+.bio {
     font-size: 22px;
 }
 
 .home-info-cups {
+    max-width: 1200px;
     text-align: left;
 }
 
 .home-info-cups ul {
-    font-size: 18px;
+    font-size: 1rem;
     list-style-type: disclosure-closed;
 }
 
@@ -364,6 +375,37 @@ footer {
     color: var(--white);
 }
 
+@media only screen and (min-width: 1200px) {
+    .home-bio {
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        border: 2px solid var(--accent);
+        border-radius: 1rem;
+        box-shadow: 0px 0px 10px #0005;
+    }
+
+    .myself, .bio {
+        min-width: 450px;
+        width: 35vw;
+        max-width: 1000px;
+        height: auto;
+        margin-inline: 10px;
+        font-size: calc(0.5rem + 0.9vw);
+    }
+
+    .home-info-cups {
+        font-size: calc(0.5rem + 0.9vw);
+        margin-top: 100px;
+    }
+    .home-info-cups ul {
+        font-size: calc(0.3rem + 0.9vw);
+    }
+}
+
 @media only screen and (max-width: 1000px) {
     .intro-portfolio {
         max-width: 600px;
@@ -374,9 +416,16 @@ footer {
     .home-info {
         width: auto;
         padding-block: 10px;
+        background-image: url("../images/me.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
-    .home-info p {
+    .myself {
+        display: none;
+    }
+
+    .bio {
         font-size: 16px;
     }
 
