@@ -419,6 +419,7 @@ footer {
         background-image: url("../images/me.jpg");
         background-size: cover;
         background-repeat: no-repeat;
+        background-position-x: 53%;
     }
 
     .myself {
