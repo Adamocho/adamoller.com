@@ -18,39 +18,29 @@ const IndexPage: React.FC<PageProps> = () => {
     <main>
       <nav>
         <div className="items">
-          <img src={logo} onClick={() => setPage("")}></img>
-          <div onClick={() => setPage("portfolio")}>Portfolio</div>
-          <div onClick={() => setPage("contact")}>Contact</div>
+          <a href="#about">
+            <img className="logo" src={logo} onClick={() => setPage("")}></img>
+          </a>
         </div>
       </nav>
 
-      <div className="about">
+      <div className="about" id="about">
           <div className="about-desc">
-              <span className="about-desc-name fira-code">Adam Oller
-                { page === "portfolio" && "'s works" }
-                { page === "contact" && "'s contact page"  }
-                { page === "" && "" }
-              </span>
+              <span className="about-desc-name fira-code">Adam Oller</span>
               <p className="about-desc-title">Programmer and a jack of all trades</p>
           </div>
-
-          <span className="about-bio"> Hey there!
-                { page === "portfolio" && " This is my personal portfolio. These are just a few examples of what I'm capable of. Please enjoy!" }
-                { page === "contact" && " My contact page is waiting for you. Got any questions - let's talk. I'm open and always happy to aid anyone in need."  }
-                { page === "" && " I'm Adam - Rust programmer, Linux enthusiast, graphics designer, adventurer, books suck me in for hours. I'm always open to new challenges." }
-          </span>
+        <span className="intro-bio"> I'm Adam - Rust programmer, Linux enthusiast, graphics designer, adventurer, books suck me in for hours, always open to new challenges.</span>
       </div>
-        { page === "portfolio" && <div className="separator wave3"></div>  }
-        { page === "contact" && <div className="separator wave2"></div>  }
-        { page === "" && <div className="separator wave1"></div> }
 
       <div className="content">
-        { page === "portfolio" && <Portfolio/> }
-        { page === "contact" && <Contact/>  }
-        { page === "" && <Home/> }
+        <Home/>
+
+        <Portfolio/>
+
+        <Contact/>
       </div>
 
-      <footer>Copyright &#169; Adam Oller 2024-eternity</footer>
+      <footer>&#169; 2024-2025 Adam Oller</footer>
     </main>
   )
 }

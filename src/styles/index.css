@@ -8,6 +8,11 @@
     --inbetween-sections: 10px;
 }
 
+html {
+    overscroll-behavior: none;
+    margin: 0;
+}
+
 body {
     margin: 0;
     background-color: var(--dominant);
@@ -22,41 +27,27 @@ main {
 }
 
 nav {
-    position: absolute;
-    top: 0;
+    position: sticky;
+    top: 10px;
+    right: 10px;
     overflow: visible;
     width: 100vw; 
     height: 0;
-    font-family: 'Times New Roman', Times, serif; 
-    font-size: 25px;
-    z-index: 1;
 }
 
 nav .items {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: left;
+}
+
+.logo {
     height: 40px;
-    color: var(--accent);
-}
-
-.items * {
-    user-select: none;
-    cursor: pointer;
     width: auto;
-    transition: color 2.5s, background-color 400ms;
-    transition-timing-function: ease-out;
-    border-bottom: 1px solid var(--dark-with-opacity);
-    padding-inline: clamp(5px, -2.38rem + 16.026vw, 10vw);
-}
-
-.items img {
-    padding-block: 5px;
+    margin-left: 10px;
 }
 
 .items > :hover {
-    color: var(--dark);
-    background-color: var(--white);
-    border-color: var(--white);
+    cursor: pointer;
 }
 
 footer {
@@ -64,16 +55,15 @@ footer {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background-color: var(--dark);
     width: 100%;
     height: 100px;
     color: var(--white);
     font-size: 18px;
     border-bottom: 100px solid linear-gradient(var(--white), var(--dark));
+    padding-top: 50px;
 }
 
 .about {
-    background-color: var(--dominant);
     width: 100%;
     min-height: fit-content;
     text-align: center;
@@ -115,11 +105,14 @@ footer {
     margin-bottom: 20px;
 }
 
-.about-bio {
+.intro-bio, .intro-contact {
     display: inline-block;
     font-size: clamp(22px, 1.5vw, 30px);
-    max-width: 90%;
-    padding-bottom: 50px;
+    margin-inline: auto;
+    max-width: 800px;
+    min-height: fit-content;
+    text-align: center;
+    padding-bottom: 100px;
 }
 
 .separator {
@@ -128,22 +121,6 @@ footer {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-}
-
-.wave1 {
-    background-image: url('../images/waves-blue-to-white.svg');
-}
-
-.wave2 {
-    background-image: url('../images/waves-blue-to-black.svg');
-}
-
-.wave3 {
-    background-image: url('../images/waves-blue-to-gold.svg');
-}
-
-.flip {
-    transform: rotate(180deg);
 }
 
 .fira-code {
@@ -221,24 +198,48 @@ footer {
 }
 
 .portfolio {
-    background-color: var(--accent);
-    color: var(--dark);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
 
+.portfolio h1 {
+    color: var(--accent);
+    width: 100vw;
+}
+
+.intro-portfolio {
+    display: inline-block;
+    font-size: clamp(22px, 1.5vw, 30px);
+    margin-inline: auto;
+    min-height: fit-content;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+
 .project {
+    background-color: var(--dark);
+    color: var(--white);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     margin: 15px;
-    padding-inline: 10px;
-    background-color: var(--dark);
-    color: var(--white);
+    padding: 10px 15px;
     text-align: center;
+    vertical-align: middle;
+    justify-content: center;
     width: 500px;
+    min-height: 250px;
+    height: fit-content;
+    border: 1px solid black;
+    box-shadow: 0px 0px 9px #0009;
+    border-radius: 0.25rem;
+}
+
+.project * {
+    width: 100%;
 }
 
 .project-title {
@@ -252,24 +253,9 @@ footer {
 .project-description {
     height: fit-content;
     width: 100%;
+    font-family: 'Fira-Code', monospace;
 }
 
-.github-card {
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    min-width: 100px;
-    height: fit-content;
-    text-align: center;
-    vertical-align: middle;
-    justify-content: center;
-    color: var(--white);
-    padding-bottom: 5px;
-}
-
-.github-card * {
-    width: 100%;
-}
 
 .github-link:hover {
     text-decoration: underline;
@@ -285,9 +271,6 @@ footer {
     width: 100%;
 }
 
-.home {
-    background-color: var(--white);
-}
 
 .home-info {
     max-width: 1200px;
@@ -299,7 +282,6 @@ footer {
     padding:50px;
     margin-inline: auto;
     margin-bottom: 50px;
-    background-color: var(--dark);
     border-radius: 15px;
     font-family: 'Fira Code', monospace;
     color: var(--white);
@@ -332,13 +314,19 @@ footer {
 }
 
 .contact {
+    width: 65vw;
+    min-width: 500px;
+    max-width: 1000px;
+    margin-inline: auto;
     background-color: var(--dark); 
     color: var(--white);
+    border: 1px solid black;
+    box-shadow: 0px 0px 9px var(--dark);
+    border-radius: 5px;
 }
 
 .contact h1 {
     font-size: clamp(2.5rem, 5.333vw, 4rem);
-    padding-bottom: 100px;
 }
 
 .contact h1::after {
@@ -368,9 +356,18 @@ footer {
 }
 
 .contact-link:visited {
+    color: var(--dominant);
+}
+
+.contact-link:active {
     color: var(--white);
 }
 
+@media only screen and (max-width: 1000px) {
+    .intro-portfolio {
+        max-width: 600px;
+    }
+}
 
 @media only screen and (max-width: 600px) {
     .home-info {
@@ -408,5 +405,11 @@ footer {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
+    }
+
+    .contact {
+        width: 90vw;
+        min-width: 400px;
+        margin-inline: auto;
     }
 }

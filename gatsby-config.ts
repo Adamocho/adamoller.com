@@ -2,7 +2,7 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Adam Oller - programmer and a jack of all trades`,
+    title: `Adam Oller's website`,
     siteUrl: `https://www.adamoller.com`
   },
   plugins: [
@@ -21,10 +21,6 @@ const config: GatsbyConfig = {
           {
             name: 'Open Sans',
             file: 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap'
-          },
-          {
-            name: 'Sacramento',
-            file: 'https://fonts.googleapis.com/css2?family=Sacramento&display=swap'
           },
           {
             name: 'Fira Code',

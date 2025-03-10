@@ -6,6 +6,7 @@ const Contact: React.FC<PageProps> = () => {
     return (
         <div className="contact">
             <h1>Contact section</h1>
+            <span className="intro-contact">Got any questions? - let's chat.</span>
             <div className="links">
                 <p>LinkedIn: <a className="contact-link" href="https://www.linkedin.com/in/olleradam" target="_blank">https://www.linkedin.com/in/olleradam</a></p>
                 <p>GitHub: <a className="contact-link" href="https://www.github.com/adamocho" target="_blank">https://www.github.com/adamocho</a></p>
