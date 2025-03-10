@@ -307,6 +307,7 @@ footer {
 
 .bio {
     font-size: 22px;
+    text-shadow: 0.5px 0.5px var(--dark);
 }
 
 .home-info-cups {
